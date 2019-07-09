@@ -1,0 +1,36 @@
+.header
+  .header__main
+    .header__main__left
+      %h1.header__main__left--sample
+        sample
+      %p.header__main__left--member
+        Member : fujisawatk
+    %h1.header__main--edit
+      Edit
+  .header__sub
+    %h1.header__sub__name
+      fujisawatk
+      %span<>
+    .header__sub__btn
+      = link_to "", class: "header__sub__btn header__sub__btn--cog" do
+        = fa_icon 'cog', class: "header__sub__btn--icon"
+      = link_to "", class: "header__sub__btn header__sub__btn--edit" do
+        = fa_icon 'edit', class: "header__sub__btn--icon"
+    
+.contents
+  .contents__main
+    .contents__main__null
+    %ul.contents__main__ul
+      = render "message"
+  .contents__left
+    %ul.contents__left__ul
+      = render "group"
+
+.form
+  .form__box
+    %input{:name => "text", :size => "80", :placeholder => "type a message", :class => "form__box__input"}
+    = label :image, "message",class: "form__box__label" do
+      = file_field :image, "message", class: "form__box__label--file"
+      = fa_icon "image", class: "form__box__label--image"
+    %submit{:name => "submit", :size => "20", :class => "form__box__submit"}
+      Send
