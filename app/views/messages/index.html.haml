@@ -9,10 +9,10 @@
       Edit
   .header__sub
     %h1.header__sub__name
-      fujisawatk
+      = current_user.name
       %span<>
     .header__sub__btn
-      = link_to "", class: "header__sub__btn header__sub__btn--cog" do
+      = link_to edit_user_path(current_user), class: "header__sub__btn header__sub__btn--cog" do
         = fa_icon 'cog', class: "header__sub__btn--icon"
       = link_to "", class: "header__sub__btn header__sub__btn--edit" do
         = fa_icon 'edit', class: "header__sub__btn--icon"
