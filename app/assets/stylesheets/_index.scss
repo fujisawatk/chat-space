@@ -103,14 +103,15 @@
     height: 100%;
     background-color: #2f3e51;
     &__ul{
+      padding-left: 20px;
       &__li{
-        color: $white;
-        padding-left: 20px;
         &--sample{
+          color: $white;
           font-size: 15px;
           padding: 20px 0 5px 0;
         }
         &--text{
+          color: $white;
           font-size: 11px;
           padding-bottom: 40px;
         }

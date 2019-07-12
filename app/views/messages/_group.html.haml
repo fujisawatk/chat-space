@@ -1,5 +1,8 @@
 %li.contents__left__ul__li
-  %h2.contents__left__ul__li--sample
-    sample
-  %p.contents__left__ul__li--text
-    test
+- current_user.groups.each do |group|
+  = link_to group_messages_path(group) do
+    .contents__left__ul__li--sample
+      = group.group_name
+    .contents__left__ul__li--text
+      メッセージはまだありません。
+    
