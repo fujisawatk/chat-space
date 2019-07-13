@@ -29,9 +29,9 @@
 
 .form
   .form__box
-    %input{:name => "text", :size => "80", :placeholder => "type a message", :class => "form__box__input"}
-    = label :image, "message",class: "form__box__label" do
-      = file_field :image, "message", class: "form__box__label--file"
+  = form_for [@group, @message] do |f|
+    = f.text_field :text, class: "form__box__input", placeholder: "type a message"
+    = f.label :image, "message", class: "form__box__label" do
+      = f.file_field :image, class: "form__box__label--file"
       = fa_icon "image", class: "form__box__label--image"
-    %submit{:name => "submit", :size => "20", :class => "form__box__submit"}
-      Send
+    = f.submit "Send", class: "form__box__submit"
