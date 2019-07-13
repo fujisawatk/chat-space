@@ -1,7 +1,12 @@
 %li.contents__main__ul__li
-  .contents__main__ul__li--name
-    fujisawatk
-  .contents__main__ul__li--date
-    2019/07/07(Sun) 00:00:00
-  .contents__main__ul__li--messages
-    message
+  .contents__main__ul__li--up
+    .contents__main__ul__li--up--name
+      = message.user.name
+    .contents__main__ul__li--up--date
+      = message.created_at.strftime("%Y/%m/%d %H:%M")
+  .contents__main__ul__li--down
+    - if message.text.present?
+      .contents__main__ul__li--down--messages
+        = message.text
+    = image_tag message.image.url, class: 'contents__main__ul__li--messages--image' if message.image.present?
+

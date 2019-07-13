@@ -1,37 +1,26 @@
-.header
-  .header__main
-    .header__main__left
-      %h1.header__main__left--sample
-        sample
-      %p.header__main__left--member
-        Member : fujisawatk
-    %h1.header__main--edit
-      Edit
-  .header__sub
-    %h1.header__sub__name
-      = current_user.name
-      %span<>
-    .header__sub__btn
-      = link_to edit_user_path(current_user), class: "header__sub__btn header__sub__btn--cog" do
-        = fa_icon 'cog', class: "header__sub__btn--icon"
-      = link_to new_group_path, class: "header__sub__btn header__sub__btn--edit" do
-        = fa_icon 'edit', class: "header__sub__btn--icon"
-    
+.wrapper
+  
+  = render 'shared/side_bar'
+
 .contents
+  .contents__top
+    .contents__top__user
+      .contents__top__user--group
+        group
+      .contents__top__user--name
+        Member : fujisawatk
+    .contents__top__edit
+      Edit
   .contents__main
-    .contents__main__null
     %ul.contents__main__ul
-      = render "message"
-  .contents__left
-    %ul.contents__left__ul
-      = render "group"
+      = render @messages
+  .contents__form
+    = form_for [@group, @message], html: { class: 'contents__form__multi'} do |f|
+      .contents__form__multi__main
+        = f.text_field :text, class: "contents__form__multi__main__input", placeholder: "type a message"
+        = f.label :image, "message", class: "contents__form__multi__main__label" do
+          = f.file_field :image, class: "contents__form__multi__main__label--file"
+          = fa_icon "image", class: "contents__form__multi__main__label--image"
+      = f.submit "Send", class: "contents__form__multi__submit"  
 
 
-.form
-  .form__box
-  = form_for [@group, @message] do |f|
-    = f.text_field :text, class: "form__box__input", placeholder: "type a message"
-    = f.label :image, "message", class: "form__box__label" do
-      = f.file_field :image, class: "form__box__label--file"
-      = fa_icon "image", class: "form__box__label--image"
-    = f.submit "Send", class: "form__box__submit"
