@@ -1,114 +1,42 @@
 .header{
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100px;
-  width: 100%;
-  z-index: 10;
-  &__main{
-    float: right;
+  width: 300px;
+  float: left;
+  &__top{
     height: 100px;
-    width: calc(100vw - 300px);
-    border-bottom: 1px solid #eeeeee;
-    background-color: $white;
-    &__left{
-      float: left;
-      padding-left: 40px;
-      &--sample {
-        font-size: 20px;
-        color: #333333;
-        padding: 35px 0 15px 0;
-      }
-      &--member{
-        font-size: 12px;
-        color: $gray;
-      }
-    }
-    &--edit {
-      float: right;
-      color: $blue;
-      height: 40px;
-      line-height: 40px;
-      padding: 0 20px;
-      border: 1px solid $blue;
-      margin: 28px 40px 0 0;
-    }
-  }
-  &__sub{
-    float: left;
-    height: 100px;
-    width: 300px;
     background-color: #253141;
-    &__name{
-      float: left;
-      line-height: 100px;
-      padding-left: 20px;
-      color: $white;
-      font-weight: bold;
-      font-size: 16px;
-    }
-    &__btn{
-      float: right;
-      color: $white;
-      line-height: 100px;
-      &--cog{
-        margin: 0 20px 0 5px;
-      }
-    }
-  }
-}
-
-.contents{
-  height: 100vh;
-  width: 100vw;
-  background-color: $dark-white;
-  padding-top: 100px;
-  &__main{
-    float: right;
-    width: calc(100vw - 300px);
-    background-color: $dark-white;
-    &__null{
-      height: 46px;
+    align-items: center;
+    padding: 0 20px;
+    display: flex;
+    &__info{
+      display: flex;
+      justify-content: space-between;
       width: 100%;
-    }
-    &__ul{
-      padding-left: 40px;
-      &__li{
-        width: 100%;
-        &--name{
-          float: left;
-          font-size: 16px;
-          color: $dark-gray;
-          padding-right: 10px;
-          font-weight: bold;
-        }
-        &--date{
-          font-size: 12px;
-          color: $gray;  
-        }
-        &--messages{
-          clear: both;
-          font-size: 14px;
-          color: $dark-gray;
-          padding: 10px 40px 60px 0;
+      &__name{
+        color: $white;
+        font-weight: bold;
+        font-size: 16px;
+      }
+      &__btn{
+        display: flex;
+        color: $white;
+        text-decoration: none;
+        &--edit{
+          padding-right: 5px;
         }
       }
-    } 
+    }
   }
-
   &__left{
-    position: fixed;
-    float: left;
-    width: 300px;
-    height: 100%;
+    height: calc(100vh - 119px);
     background-color: #2f3e51;
+    overflow: scroll;
+    padding: 20px 20px 0;
     &__ul{
-      padding-left: 20px;
       &__li{
         &--sample{
           color: $white;
           font-size: 15px;
-          padding: 20px 0 5px 0;
+          padding-bottom: 5px;
         }
         &--text{
           color: $white;
@@ -120,42 +48,111 @@
   }
 }
 
-.form{
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  height: 90px;
+.contents{
+  float: left;
   width: calc(100vw - 300px);
-  background-color: #dddddd;
-  &__box{
+  &__top{
+    height: 100px;
+    border-bottom: 1px solid #eeeeee;
     display: flex;
-    margin: 20px 40px 20px 40px;
-    &__input{
-      float: left;
-      height: 50px;
-      width: 100%;
-      border: $white;
-      padding-left: 10px;
-    }
-    &__label {
-      cursor: pointer;
-      background-color: $white;
-      height: 50px;
-      &--file{
-        display: none;
-      }  
-      &--image{
-        color: black;
+    justify-content: space-between;
+    padding: 0 40px;
+    overflow: scroll;
+    &__user{
+      margin-top: 35px;
+      &--group {
         font-size: 20px;
-        padding: 15px 10px;
-      } 
+        color: #333333;
+        margin-bottom: 15px;
+      }
+      &--name{
+        font-size: 12px;
+        color: $gray;
+        display: flex;
+      }
     }
-    &__submit{
-      padding: 12px 30px;
-      font-size: 16px;
-      color: $white;
-      background-color: $blue;
-      margin-left: 15px;
+    &__edit{
+      right: 40px;
+      margin-top: 30px;
+      color: $blue;
+      height: 40px;
+      line-height: 40px;
+      padding: 0 20px;
+      border: 1px solid $blue;
+      cursor: pointer;
+    }
+  }
+  &__main{
+    height: calc(100vh - 282px);
+    background-color: $dark-white;
+    padding: 46px 40px;
+    overflow: scroll;
+    &__ul{
+      &__li{
+        padding-bottom: 40px;
+        &--up{
+          display: flex;
+          &--name{
+            font-size: 16px;
+            color: $dark-gray;
+            font-weight: bold;
+          }
+          &--date{
+            font-size: 12px;
+            color: $gray;
+            margin-left: 10px;
+          }
+        }
+        &--down{
+          &--messages{
+            font-size: 14px;
+            color: $dark-gray;
+            margin-bottom: 10px;
+          }
+        }
+      }
+    } 
+  }
+  &__form{
+    height: 50px;
+    background-color: #dddddd;
+    padding: 20px 40px;
+    &__multi{
+      display: flex;
+      height: 50px;
+      &__main{
+        position: relative;
+        width: 100%;
+        height: 50px;
+        &__input{
+          border: $white;
+          padding: 0 40px 0 10px;
+          height: 50px;
+          width: calc(100% - 50px);
+        }
+        &__label {
+          position: absolute;
+          top: 15px;
+          right: 10px;
+          cursor: pointer;
+          background-color: $white;
+          &--file{
+            display: none;
+          }  
+          &--image{
+            color: black;
+            font-size: 1.3rem;
+          } 
+        }
+      }
+      &__submit{
+        height: 50px;
+        width: 100px;
+        padding: 0 30px;
+        color: $white;
+        background-color: $blue;
+        margin-left: 15px;
+      }
     }
   }
 }
