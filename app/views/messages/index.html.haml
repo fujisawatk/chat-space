@@ -6,9 +6,12 @@
   .contents__top
     .contents__top__user
       .contents__top__user--group
-        group
-      .contents__top__user--name
-        Member : fujisawatk
+        = @group.group_name
+      %ul.contents__top__user--name
+        = "Member : "
+        - @group.users.each do |user|
+          %li.contents__top__user--name--li
+            = user.name
     .contents__top__edit
       Edit
   .contents__main
