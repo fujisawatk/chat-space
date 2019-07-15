@@ -1,4 +1,4 @@
-FactoryBot.dafine do
+FactoryBot.define do
 
   factory :message do
     text    {Faker::Lorem.sentence}
