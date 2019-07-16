@@ -3,24 +3,23 @@ $(function(){
     var content = message.text ? `${message.text}` : "";
     var img = message.image ? `<img src= ${message.image}` : "";
     var html = `<li class="contents__main__ul__li">
-                <div class="contents__main__ul__li--up">
-                  <div class="contents__main__ul__li--up--name">
-                  ${message.user_name}
-                  </div>
-                  <div class="contents__main__ul__li--up--date">
-                  ${message.time}
-                  </div>
-                </div>
-                <div class="contents__main__ul__li--down">
-                    <div class="contents__main__ul__li--down--messages">
-                      ${content}
+                  <div class="contents__main__ul__li--up">
+                    <div class="contents__main__ul__li--up--name">
+                      ${message.user_name}
                     </div>
-                    <div class="contents__main__ul__li--messages--image">
-                      ${img}
+                    <div class="contents__main__ul__li--up--date">
+                      ${message.time}
                     </div>
-                </div>
-              </li>
-`;
+                  </div>
+                  <div class="contents__main__ul__li--down">
+                      <div class="contents__main__ul__li--down--messages">
+                        ${content}
+                      </div>
+                      <div class="contents__main__ul__li--messages--image">
+                        ${img}
+                      </div>
+                  </div>
+                </li>`;
                   return html;
   }
   function scroll(){
