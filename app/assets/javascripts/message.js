@@ -41,7 +41,7 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       $('.contents__main__ul').append(html);
-      $('.contents__form__multi__main__input').val('');
+      $('.contents__form__multi')[0].reset();
       $('.contents__form__multi__submit').prop('disabled',false);
       scroll();
     })
