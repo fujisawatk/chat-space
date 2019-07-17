@@ -59,7 +59,6 @@ $(function(){
     var id = $(this).data("user-id");
     $(this).parent().remove();
       appendMembers(name, id);
-      $('#user-search-field').val("");
   });
   $(document).on("click",".user-search-remove", function(){
     $(this).parent().remove();
