@@ -1,4 +1,4 @@
-%li.contents__main__ul__li
+%li.contents__main__ul__li{ "data-message_id": "#{message.id}" }
   .contents__main__ul__li--up
     .contents__main__ul__li--up--name
       = message.user.name
@@ -9,4 +9,4 @@
       .contents__main__ul__li--down--messages
         = message.text
     = image_tag message.image.url, class: 'contents__main__ul__li--messages--image' if message.image.present?
-
+  
