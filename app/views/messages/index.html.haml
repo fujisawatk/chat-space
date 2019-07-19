@@ -13,7 +13,7 @@
           %li.contents__top__user--name--li
             = user.name
     .contents__top__edit
-      Edit
+      = link_to "Edit", "/groups/#{@group.id}/edit"
   .contents__main
     %ul.contents__main__ul
       = render @messages

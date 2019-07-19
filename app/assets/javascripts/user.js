@@ -1,5 +1,7 @@
 $(function(){
 
+
+  
   var search_result = $("#user-search-result");
   var add_members = $("#chat-group-form__field--right--users")
 

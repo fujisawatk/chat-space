@@ -29,7 +29,6 @@ $(function(){
     $('.contents__main').animate({scrollTop: $('.contents__main')[0].scrollHeight});
   }
 
-  $(document).on('turbolinks:load', function() {
 
     $('.contents__form__multi').on('submit', function(e){
       e.preventDefault();
@@ -54,7 +53,7 @@ $(function(){
         .fail(function(){
           arert('error');
         })
-    });
+    
 });
 
   var reloadMessages = function() {
