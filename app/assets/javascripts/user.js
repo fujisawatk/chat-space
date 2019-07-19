@@ -43,14 +43,12 @@ $(function(){
     })
     .done(function(users){
       $('#user-search-result').empty();
-      if (users.length !== 0){
         users.forEach(function(user){
-          appendUser(user);
-        });
+        appendUser(user);
+    })
+      if (input.length === 0){
+        $('#user-search-result').empty();
       }
-      else{
-        appendErrMsgToHTML("一致するユーザーはいません")
-      };
     })
     .fail(function(){
       alert('ユーザー検索に失敗しました');
