@@ -8,12 +8,14 @@
       .contents__top__user--group
         = @group.group_name
       %ul.contents__top__user--name
-        = "Member : "
+        = "Member :"
         - @group.users.each do |user|
           %li.contents__top__user--name--li
             = user.name
+         
+
     .contents__top__edit
-      = link_to "Edit", "/groups/#{@group.id}/edit"
+      = link_to "Edit", "/groups/#{@group.id}/edit", class:"contents__top__edit--btn"
   .contents__main
     %ul.contents__main__ul
       = render @messages

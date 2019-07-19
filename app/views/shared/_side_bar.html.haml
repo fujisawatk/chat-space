@@ -12,7 +12,7 @@
     .header__left
       %ul.header__left__ul
         - current_user.groups.each do |group|
-          = link_to group_messages_path(group) do
+          = link_to group_messages_path(group), class:"header__left__ul" do
             %li.header__left__ul__li
               .header__left__ul__li--sample
                 = group.group_name
