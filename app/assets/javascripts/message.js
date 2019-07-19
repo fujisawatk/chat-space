@@ -55,10 +55,14 @@ $(function(){
         })
     
 });
-
+  
   var reloadMessages = function() {
       if (window.location.href.match(/\/groups\/\d+\/messages/)){
-      var last_message_id = $('.contents__main__ul__li:last').data('message_id');
+        if($('.contents__main__ul__li')[0]){
+          var last_message_id = $('.contents__main__ul__li:last').data('message_id');
+        }else{
+          var last_message_id = 0
+        }
       $.ajax({
         url: "api/messages",
         type: 'GET',
@@ -70,7 +74,7 @@ $(function(){
       
       .done(function(messages){
         var insertHTML = '';
-        messages.forEach(function(message){
+        messages.forEach(function(message){ 
         insertHTML = buildHTML(message);
         $('.contents__main__ul').append(insertHTML);
         })
