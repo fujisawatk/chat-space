@@ -1,4 +1,6 @@
 $(function(){
+
+
   function buildHTML(message){
     var content = message.text ? `${message.text}` : "";
     var img = message.image ? `<img src= ${message.image}` : "";
@@ -29,6 +31,8 @@ $(function(){
     $('.contents__main').animate({scrollTop: $('.contents__main')[0].scrollHeight});
   }
 
+  $(document).on('turbolinks:load', function() { 
+
 
     $('.contents__form__multi').on('submit', function(e){
       e.preventDefault();
@@ -50,12 +54,14 @@ $(function(){
           $('.contents__form__multi__submit').prop('disabled',false);
           scroll();
         })
+
         .fail(function(){
-          arert('error');
+          alert('メッセージを入力して下さい');
+          $('.contents__form__multi__submit').prop('disabled',false);
         })
-    
-});
-  
+      })
+  });
+
   var reloadMessages = function() {
       if (window.location.href.match(/\/groups\/\d+\/messages/)){
         if($('.contents__main__ul__li')[0]){
