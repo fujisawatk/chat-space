@@ -51,7 +51,7 @@ $(function(){
           scroll();
         })
         .fail(function(){
-          arert('error');
+          alert('メッセージを入力して下さい');
         })
     
 });
